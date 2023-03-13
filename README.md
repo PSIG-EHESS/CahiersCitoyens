@@ -18,3 +18,51 @@ output 1 : un seul dataframe enregistré sous forme de csv pour toutes les donn�
 output 2 : un dataframe avec les communes et les nb de contrib : 16 420 communes
 output 3 : un dataframe avec les pages : 196 821 pages
 output 4 : un dataframe avec les numéro uniques (id de cahiers) : 19 250
+
+dépendances : voici la liste des packages installés dans mon environment :
+Package           Version
+----------------- --------
+asttokens         2.2.1
+backcall          0.2.0
+comm              0.1.2
+contourpy         1.0.7
+cycler            0.11.0
+debugpy           1.6.6
+decorator         5.1.1
+executing         1.2.0
+fonttools         4.39.0
+ipykernel         6.21.2
+ipython           8.11.0
+jedi              0.18.2
+jupyter_client    8.0.3
+jupyter_core      5.2.0
+kiwisolver        1.4.4
+matplotlib        3.7.1
+matplotlib-inline 0.1.6
+matplotlib-venn   0.11.9
+nest-asyncio      1.5.6
+numpy             1.24.2
+packaging         23.0
+pandas            1.5.3
+parso             0.8.3
+pexpect           4.8.0
+pickleshare       0.7.5
+Pillow            9.4.0
+pip               22.0.2
+platformdirs      3.0.0
+prompt-toolkit    3.0.38
+psutil            5.9.4
+ptyprocess        0.7.0
+pure-eval         0.2.2
+Pygments          2.14.0
+pyparsing         3.0.9
+python-dateutil   2.8.2
+pytz              2022.7.1
+pyzmq             25.0.0
+scipy             1.10.1
+setuptools        59.6.0
+six               1.16.0
+stack-data        0.6.2
+tornado           6.2
+traitlets         5.9.0
+wcwidth           0.2.6
