@@ -20,9 +20,9 @@ output 3 : un dataframe avec les pages : 196 821 pages
 output 4 : un dataframe avec les numéro uniques (id de cahiers) : 19 250
 
 dépendances : voici la liste des packages installés dans mon environment :
-Package           Version
------------------ --------
-asttokens         2.2.1
+Package           Version \n
+----------------- -------- \n
+asttokens         2.2.1 \n
 backcall          0.2.0
 comm              0.1.2
 contourpy         1.0.7
