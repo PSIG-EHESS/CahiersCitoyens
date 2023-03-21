@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# on the saved files of the archive national which were zipped directories in TWO hard disks
+# as this code is pretty raw, I just changed manually the path+filename for first and second parts
 dir="../../../mnt/d/CahiersCitoyensGDNpart2"
 
 # outputs de zipinfo : type'archive', name, size, nb of files, type'file'
