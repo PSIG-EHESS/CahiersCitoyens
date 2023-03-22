@@ -3,12 +3,18 @@ Projet CC
 
 Résultats stage de Marjolaine Ray.
 
-=> “**comparaison.py**” : ouvre les dataframes contrib_from_original.csv (df_original) et contrib_from_csv.csv (df_processed)<br>
+=> “**comparaison.py**” : ouvre les dataframes contrib_from_original.csv (df_original) et contrib_from_csv.csv (df_processed)
+
 teste des merge pour déterminer les communes manquantes / les départements manquants / les cahiers manquants, entre les deux corpus et entre les stats 2019 de l'insee
+
 1 : teste les communes / départements / cahiers entre les deux corpus (original vs. processed)
+
 2 : teste les communes / départements entre l'insee et le processed
+
 3 : teste les communes / départements entre l'insee et l'original
+
 4 : affiche des diagram de venn pour représenter ces inclusions / exclusions entre communes ou départements
+
 5 : affiche les nombre de communes ou département pour chacuns
 
 => "**parsezip_and_count.sh**” : parcourt les .zip des données archives (deux disque durs de la plateforme) et récupère le nom du dossier (tout les cahiers d’une commune) et le nombre de fichiers à l’intérieur.
