@@ -3,7 +3,7 @@ Projet CC
 
 Résultats stage de Marjolaine Ray.
 
-=> “**comparaison.py**” : ouvre les dataframes contrib_from_original.csv (df_original) et contrib_from_csv.csv (df_processed)
+=> “**comparaison.py**” : ouvre les dataframes contrib_from_original.csv (df_original) et contrib_from_csv.csv (df_processed)\n
 teste des merge pour déterminer les communes manquantes / les départements manquants / les cahiers manquants, entre les deux corpus et entre les stats 2019 de l'insee
 1 : teste les communes / départements / cahiers entre les deux corpus (original vs. processed)
 2 : teste les communes / départements entre l'insee et le processed
