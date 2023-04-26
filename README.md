@@ -3,6 +3,13 @@ Projet CC
 
 Résultats stage de Marjolaine Ray.
 
+=> "**preprocess_and_lemmatize.ipynb**" : input = contrib_for_original.csv, output = 3516 fichier de texte lemmes et 3516 fichier de PoS tagging (en utilisant des batches de 64 contributions)
+
+1 : ouvre les dataframes contrib_for_original.csv, 
+2 : supprime les traces de mise en forme et les "illisibles". 
+3 : Lemmatise les contributions en utilisant le modèle "core_news_f_mdr" spacy. 
+4 : Récupère le texte et les positions des lemmes ainsi produit et les écrit par batches pour ne pas surcharger la RAM à disposition (sous forme csv).
+
 => “**comparaison.py**” : ouvre les dataframes contrib_from_original.csv (df_original) et contrib_from_csv.csv (df_processed)
 
 teste des merge pour déterminer les communes manquantes / les départements manquants / les cahiers manquants, entre les deux corpus et entre les stats 2019 de l'insee
