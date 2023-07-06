@@ -1,31 +1,33 @@
 # CahiersCitoyens
 Projet CC
+stage de Marjolaine Ray.
+pipeline dans lordre antéchronologique :
 
-Résultats stage de Marjolaine Ray.
+=> "**preprocess_and_split**" : input = df_CC_cleaned_lemmas_postag_stopwords.csv, save = pickle_sentence_df.pkl
+* découpe les phrases de chaque contribution (nlp.sents par Spacy avec "core_news_fr_md")
+* crée un dataframe avec les phrases et les métadonnées associées à leur contributions d'origine et le sauvegarde
 
-=> "**preprocess_and_lemmatize.ipynb**" : input = contrib_for_original.csv, output = 3516 fichier de texte lemmes et 3516 fichier de PoS tagging (en utilisant des batches de 64 contributions)
+=> "**preprocess_and_lemmatize.ipynb**" : input = df_CC_cleaned.csv, save = dataframe as df_CC_lemmas_postag, df_CC_cleaned_lemmas_postag_stopwords.csv
+* tokenise + lemmatise chaque contribution et sauvegarde les lemmes + leurs postag associés (modèle "core_news_fr_md" de Spacy) 
+* tokenise + lemmatise chaque contribtion et ne sauvegarde que les lemmes VERB, ADV, ADJ, NOUN et leurs postags. L'objectif était d'éliminer plus que des stopwords pour faciliter la tâche du LDA
+* supprime les stopwords à partir du lexique de spacy fr 
 
-1 : ouvre le dataframe contrib_for_original.csv, 
-
-2 : supprime les traces de mise en forme et les "illisibles". 
-
-3 : la fonction lemmatize() lemmatise les contributions en utilisant le modèle "core_news_f_mdr" spacy. stopword = True pour ajouter une condition qui enlève les lemmes associés à des stopwords. 
-
-4 : Récupère le texte et les positions des lemmes ainsi produit et les ajoute au dataframe global.
+=> "**preprocess_and_clean.ipynb**" : input = contrib_from_csv.csv, save = dataframe as df_CC_cleaned.csv
+* supprime toutes les notations d'"illisibles", les traces de mises en forme, les mail, les sites, normalise les acronymes (I.S.F. -> ISF), etc
 
 => “**comparaison.py**” : ouvre les dataframes contrib_from_original.csv (df_original) et contrib_from_csv.csv (df_processed)
-
-teste des merge pour déterminer les communes manquantes / les départements manquants / les cahiers manquants, entre les deux corpus et entre les stats 2019 de l'insee
-
+* teste des merge pour déterminer les communes manquantes / les départements manquants / les cahiers manquants, entre les deux corpus et entre les stats 2019 de l'insee.
 1 : teste les communes / départements / cahiers entre les deux corpus (original vs. processed)
-
 2 : teste les communes / départements entre l'insee et le processed
-
 3 : teste les communes / départements entre l'insee et l'original
-
 4 : affiche des diagram de venn pour représenter ces inclusions / exclusions entre communes ou départements
-
 5 : affiche les nombre de communes ou département pour chacuns
+
+* affiche et sauvegarde des diagrammes de venn + représentatifs
+
+=>"**test_content_from_xml**" : input = dossiers du corpus brut des cahier, output = strings contenues dan les balises <content> de ces xml
+* écrit les textes qui ont été océrisés par la BnF (lisibles si imprimés, illisibles si écrit)
+* le fichier "output_xml_content.txt" est stocké aussi pour exemple
 
 => "**parsezip_and_count.sh**” : parcourt les .zip des données archives (deux disque durs de la plateforme) et récupère le nom du dossier (tout les cahiers d’une commune) et le nombre de fichiers à l’intérieur.
 
