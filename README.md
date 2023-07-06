@@ -1,9 +1,26 @@
 # CahiersCitoyens
 Projet CC
 stage de Marjolaine Ray.
-pipeline dans lordre antéchronologique :
+pipeline dans l'ordre antéchronologique :
 
-=> "**preprocess_and_split**" : input = df_CC_cleaned_lemmas_postag_stopwords.csv, save = pickle_sentence_df.pkl
+=>"**size30_clusters_freq_BERTopic.csv**" : les topics obtenus avec une taille minimale de 30 document par cluster (au lieu de 10 par défaut)
+
+=>"**BERTopic_visualizations.ipynb**" : 
+* charge un modèle BERTopic (par exemple, si BERTopic.ipynb a crashé mais sauvegardé le modèle avant)
+* produit des visualisation
+
+=>"**BERTopic.ipynb**" : input = pickle_sentences_sentences.pkl ou df_CC_cleaned.csv ou df_CC_lemmas_postag.csv
+* implémente BERTopic
+* le fait tourner
+* sauvegarde les topics
+* sauvegarde le modèle obtenu
+* présente des visualisations si le kernel ne crash pas d'un RAM overflow
+
+=>"**top2vec.ipunb**" : une implémentation de Top2vec
+
+=>"**LDA.ipynb**" : une imlémentation de LDA
+
+=> "**preprocess_and_split.ipynb**" : input = df_CC_cleaned_lemmas_postag_stopwords.csv, save = pickle_sentence_df.pkl
 * découpe les phrases de chaque contribution (nlp.sents par Spacy avec "core_news_fr_md")
 * crée un dataframe avec les phrases et les métadonnées associées à leur contributions d'origine et le sauvegarde
 
@@ -14,6 +31,8 @@ pipeline dans lordre antéchronologique :
 
 => "**preprocess_and_clean.ipynb**" : input = contrib_from_csv.csv, save = dataframe as df_CC_cleaned.csv
 * supprime toutes les notations d'"illisibles", les traces de mises en forme, les mail, les sites, normalise les acronymes (I.S.F. -> ISF), etc
+
+=>"**stats.ipynb**" : nombres de pages, nombres de contributions, moyennes, ecart types, min max, etc
 
 => “**comparaison.py**” : ouvre les dataframes contrib_from_original.csv (df_original) et contrib_from_csv.csv (df_processed)
 * teste des merge pour déterminer les communes manquantes / les départements manquants / les cahiers manquants, entre les deux corpus et entre les stats 2019 de l'insee.
